@@ -13,7 +13,7 @@ hotword: 'xiaobu.pmdl'  # 唤醒词模型，如要自定义请放到 /home/pi/FS
 sensitivity: 0.45  # 灵敏度
 silent_threshold: 30 # 判断为静默时长
 recording_timeout: 4 # 录制的语音最大长度（秒）
-snowboy_token: cd38a72a3eb2252b109a810f9086ad2265d712ed # 你的token，用于 train 命令训练语音
+snowboy_token:  # 你的token，用于 train 命令训练语音
 
 # 当机器人反问用户时，是否自动进入下一轮聆听
 active_mode: false
@@ -43,9 +43,9 @@ asr_engine: baidu-asr
 # 百度语音服务
 # https://ai.baidu.com/tech/speech/asrpro
 baidu_yuyin:
-    appid: '20065799'  # 建议使用自己的百度语音账户 APPID
-    api_key: 'Gr5CpUHx934ZEiHuLYpLd6Ki'
-    secret_key: 'A96OpRIGSIBgIwwzlroXTnhnAKGUhTMP'
+    appid: '20408275'  # 建议使用自己的百度语音账户 APPID
+    api_key: 'n4xhcenm51AvCGnTjFSW0GI4'
+    secret_key: 'qRl18KYu4bhAaGLATNfcCpApw66BRweX'
     dev_pid: 80001   # 1937: 普通话远场，1536：普通话(支持简单的英文识别)，80001：ASR极速版
     per: 4  # 发音人选择 0：女生；1：男生；3：度逍遥；4：度丫丫
     lan: 'zh'
