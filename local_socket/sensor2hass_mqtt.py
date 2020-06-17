@@ -54,10 +54,10 @@ class mqtt2sensor:
         elif config.get("/sensor{}/payload_key".format(num)) == "infrared":
             if data[18:20] == "31":
                 self.client.publish('state/infrared01',
-                                    payload='{"infrared":"有人", "infrared_battery":%d}' % (battery_num))
+                                    payload='{"infrared":"on", "infrared_battery":%d}' % (battery_num))
             else:
                 self.client.publish('state/infrared01',
-                                    payload='{"infrared":"无人", "infrared_battery":%d}' % (battery_num))
+                                    payload='{"infrared":"off", "infrared_battery":%d}' % (battery_num))
         # 设备是温湿度传感器
         elif config.get("/sensor{}/payload_key".format(num)) == "temhum":
             self.client.publish('state/temhum01',
@@ -67,34 +67,34 @@ class mqtt2sensor:
         elif config.get("/sensor{}/payload_key".format(num)) == "flame":
             if int(data[18:22], 16) > 1500:
                 self.client.publish('state/flame01',
-                                    payload='{"flame":"有火焰", "flame_battery":%d}' % (battery_num), qos=0)
+                                    payload='{"flame":"on", "flame_battery":%d}' % (battery_num), qos=0)
             else:
                 self.client.publish('state/flame01',
-                                    payload='{"flame":"无火焰", "flame_battery":%d}' % (battery_num), qos=0)
+                                    payload='{"flame":"off", "flame_battery":%d}' % (battery_num), qos=0)
         # 设备是光电开关
         elif config.get("/sensor{}/payload_key".format(num)) == "itr":
             if data[18:20] == "31":
                 self.client.publish('state/itr01',
-                                    payload='{"itr":"有遮挡", "itr_battery":%d}' % (battery_num))
+                                    payload='{"itr":"on", "itr_battery":%d}' % (battery_num))
             else:
                 self.client.publish('state/itr01',
-                                    payload='{"itr":"无遮挡", "itr_battery":%d}' % (battery_num))
+                                    payload='{"itr":"off", "itr_battery":%d}' % (battery_num))
         # 设备是可燃气体
         elif config.get("/sensor{}/payload_key".format(num)) == "gas":
             if int(data[18:22], 16) > 20:
                 self.client.publish('state/gas01',
-                                    payload='{"gas":"超标", "gas_battery":%d}' % (battery_num), qos=0)
+                                    payload='{"gas":"on", "gas_battery":%d}' % (battery_num), qos=0)
             else:
                 self.client.publish('state/gas01',
-                                    payload='{"gas":"正常", "gas_battery":%d}' % (battery_num), qos=0)
+                                    payload='{"gas":"off", "gas_battery":%d}' % (battery_num), qos=0)
         # 设备是烟雾
         elif config.get("/sensor{}/payload_key".format(num)) == "fog":
             if int(data[18:22], 16) > 1:
                 self.client.publish('state/fog01',
-                                    payload='{"fog":"超标", "fog_battery":%d}' % (battery_num), qos=0)
+                                    payload='{"fog":"on", "fog_battery":%d}' % (battery_num), qos=0)
             else:
                 self.client.publish('state/fog01',
-                                    payload='{"fog":"正常", "fog_battery":%d}' % (battery_num), qos=0)
+                                    payload='{"fog":"off", "fog_battery":%d}' % (battery_num), qos=0)
         # 设备是电位器
         elif config.get("/sensor{}/payload_key".format(num)) == "potentiometer":
             self.client.publish('state/potentiometer01',

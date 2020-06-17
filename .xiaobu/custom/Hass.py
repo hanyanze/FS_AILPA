@@ -110,11 +110,11 @@ class Plugin(AbstractPlugin):
             logger.error(format(request.status_code))
             return False
 
-
     def execute_service(self, entity_id, url, port, headers, act):
         p = json.dumps({"entity_id": entity_id})
         domain = entity_id.split(".")[0]
         s = "/api/services/" + domain + "/"
+        print(s, act)
         url_s = url + ":" + port + s + act
         request = requests.post(url_s, headers=headers, data=p)
         if format(request.status_code) == "200" or \
@@ -123,7 +123,6 @@ class Plugin(AbstractPlugin):
         else:
             logger.error(format(request.status_code))
             return False
-
 
     def isValid(self, text, parsed):
         # 根据配置中的正则式来匹配
