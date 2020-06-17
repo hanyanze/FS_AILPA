@@ -73,7 +73,7 @@ class Updater(object):
             return self.update_info
         except Exception as e:
             print("检查更新失败：", e)
-            return {"error": "检查更新失败，请稍后再试！"}
+            return {"error": "检查更新过于频繁，请稍后再试！"}
 
 
 class MyWindow(QMainWindow, Ui_MainWindow):
