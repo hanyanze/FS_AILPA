@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # author = hyz
+# 这是“语音界面”的界面
 import sys
 import time
 from test import Ui_MainWindow

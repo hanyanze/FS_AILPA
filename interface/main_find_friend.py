@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # author = hyz
+# 这是“找朋友”的界面
 import sys
 import time
 from test_find_friend import Ui_MainWindow

@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# author = hyz
+# 这是“传感器控制”的界面
 import sys
 from PySide2.QtCore import *
 from PySide2.QtGui import *
