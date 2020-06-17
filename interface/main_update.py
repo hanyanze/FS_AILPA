@@ -85,6 +85,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.u = Updater()
         self.update_info = {}
         self.label.setText("当前版本：" + self.u._get_version(APP_PATH, "未知"))
+        self.pushButton_min.setStyleSheet("QPushButton{border-image: url(images/mini.png)}")
+        self.pushButton_close.setStyleSheet("QPushButton{border-image: url(images/close.png)}")
 
     def checkupdate(self, item):
         if self.pushButton.text() == "检查更新":
@@ -92,14 +94,11 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             print(self.update_info)
             try:
                 if 'tag_name' in self.update_info:
-                    print("aaaa")
                     self.textEdit.setText(self.update_info['body'])
                     self.pushButton.setText("更新")
                 elif 'error' in self.update_info:
-                    print("bbbb")
                     self.textEdit.setText(self.update_info['error'])
                 else:
-                    print("cccc")
                     self.textEdit.setText("已经是最新版本啦~~~")
             except Exception as e:
                 pass
