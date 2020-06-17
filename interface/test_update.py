@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(795, 420)
+        MainWindow.resize(795, 371)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton_close = QtWidgets.QPushButton(self.centralwidget)
@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
         self.pushButton_min.setText("")
         self.pushButton_min.setObjectName("pushButton_min")
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(30, 20, 531, 351))
+        self.textEdit.setGeometry(QtCore.QRect(30, 20, 531, 331))
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
         font.setPointSize(18)
@@ -38,17 +38,18 @@ class Ui_MainWindow(object):
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(590, 220, 191, 151))
+        self.pushButton.setGeometry(QtCore.QRect(590, 220, 191, 131))
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
         font.setPointSize(18)
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(0, 0, 795, 420))
+        self.label_2.setGeometry(QtCore.QRect(0, 0, 795, 370))
         self.label_2.setStyleSheet("QLabel{\n"
 "    background-image: url(\\\'./images/back.png\\\');\n"
 "}")
+        self.label_2.setText("")
         self.label_2.setObjectName("label_2")
         self.label_2.raise_()
         self.pushButton_close.raise_()
@@ -57,13 +58,6 @@ class Ui_MainWindow(object):
         self.label.raise_()
         self.pushButton.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 795, 23))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
         self.pushButton_min.clicked.connect(MainWindow.display_min)
@@ -76,5 +70,4 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "当前版本：未知"))
         self.pushButton.setText(_translate("MainWindow", "检查更新"))
-        self.label_2.setText(_translate("MainWindow", "TextLabel"))
 
