@@ -65,7 +65,6 @@ class Updater(object):
             main_version = info['tag_name']
             # 检查主仓库
             current_main_version = self._get_version(APP_PATH, main_version)
-            print(current_main_version)
             if semver.compare(main_version, current_main_version) > 0:
                 print('主仓库检查到更新：{}'.format(info['tag_name']))
                 self.update_info['tag_name'] = info['tag_name']
@@ -84,7 +83,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.u = Updater()
         self.update_info = {}
         self.label.setText("当前版本：" + self.u._get_version(APP_PATH, "未知"))
-        self.pushButton_min.setStyleSheet("QPushButton{border-image: url(images/mini.png)}")
+        self.pushButton_min.setStyleSheet("QPushButton{border-image: url(images/min.png)}")
         self.pushButton_close.setStyleSheet("QPushButton{border-image: url(images/close.png)}")
 
     def checkupdate(self, item):
@@ -109,7 +108,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
             self.pushButton.setEnabled(False)
             self.pushButton.setText("更新中...")
             if self.u.update(self.update_info):
-                # self.textEdit.setText(self.update_info['body'])
+                self.label.setText("当前版本：" + self.u._get_version(APP_PATH, "未知"))
                 self.pushButton.setText("检查更新")
                 self.pushButton.setEnabled(True)
                 self.update_info.clear()
