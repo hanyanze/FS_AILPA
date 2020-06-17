@@ -9,7 +9,7 @@ LED:
 # snowboy 离线唤醒
 # https://snowboy.kitt.ai/dashboard
 # 使用相同环境录入你的语音，以提升唤醒成功率和准确率
-hotword: 'xiaobu.pmdl'  # 唤醒词模型，如要自定义请放到 /home/pi/xiaobu-smartHome/.xiaobu/ 目录中
+hotword: 'xiaobu.pmdl'  # 唤醒词模型，如要自定义请放到 /home/pi/FS_AILPA/.xiaobu/ 目录中
 sensitivity: 0.45  # 灵敏度
 silent_threshold: 30 # 判断为静默时长
 recording_timeout: 4 # 录制的语音最大长度（秒）

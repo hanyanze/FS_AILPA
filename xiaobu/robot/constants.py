@@ -15,13 +15,13 @@ DEFAULT_CONFIG_NAME = 'default.yml'
 CUSTOM_CONFIG_NAME = 'config.yml'
 
 CONFIG_PATH = os.path.expanduser(
-    os.getenv('WUKONG_CONFIG', '~/xiaobu-smartHome/.xiaobu')
+    os.getenv('WUKONG_CONFIG', '~/FS_AILPA/.xiaobu')
 )
 CONTRIB_PATH = os.path.expanduser(
-    os.getenv('WUKONG_CONFIG', '~/xiaobu-smartHome/.xiaobu/contrib')
+    os.getenv('WUKONG_CONFIG', '~/FS_AILPA/.xiaobu/contrib')
 )
 CUSTOM_PATH = os.path.expanduser(
-    os.getenv('WUKONG_CONFIG', '~/xiaobu-smartHome/.xiaobu/custom')
+    os.getenv('WUKONG_CONFIG', '~/FS_AILPA/.xiaobu/custom')
 )
 
 def getConfigPath():
