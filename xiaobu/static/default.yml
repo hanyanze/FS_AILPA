@@ -1,0 +1,115 @@
+robot_name_cn: '小布'
+first_name: ''
+last_name: '唐'
+timezone: HKT
+location: '北京'
+
+# 是否展示灯光效果
+# 支持 Respeaker 2 Mics
+LED:
+    enable: true
+
+# snowboy 离线唤醒
+# https://snowboy.kitt.ai/dashboard
+# 使用相同环境录入你的语音，以提升唤醒成功率和准确率
+hotword: 'xiaobu.pmdl'  # 唤醒词模型，如要自定义请放到 /home/pi/xiaobu-smartHome/.xiaobu/ 目录中
+sensitivity: 0.46  # 灵敏度
+silent_threshold: 30 # 判断为静音的阈值。环境比较吵杂的地方可以适当调大
+recording_timeout: 4 # 录制的语音最大长度（秒）
+snowboy_token: cd38a72a3eb2252b109a810f9086ad2265d712ed # 你的token，用于 train 命令训练语音
+
+# 当机器人反问用户时，是否自动进入下一轮聆听
+active_mode: false
+
+# 勿扰模式，该时间段内自动进入睡眠，避免监听
+do_not_bother:
+    enable: false # true: 开启; false: 关闭
+    since: 23    # 开始时间
+    till: 9      # 结束时间，如果比 since 小表示第二天
+    hotword_switch: false  # 是否使用唤醒词开关唤醒模式
+    on_hotword: '悟空别吵.pmdl'  # 通过这个唤醒词可切换勿扰模式。默认是“悟空别吵”
+    off_hotword: '悟空醒醒.pmdl'  # 通过这个唤醒词可切换勿扰模式。默认是“悟空醒醒”
+
+# 是否定期清理temp目录下的缓存音频
+lru_cache:
+    enable: true # true: 开启; false: 关闭
+    days: 7 # 清理超过多少天没有使用的文件
+
+# 语音合成服务配置
+# baidu-tts     - 百度语音合成
+tts_engine: baidu-tts
+
+# 语音识别服务配置
+# baidu-asr     - 百度在线语音识别
+asr_engine: baidu-asr
+
+# 百度语音服务
+# http://yuyin.baidu.com/
+baidu_yuyin:
+    appid: '15019988'  # 建议使用自己的百度语音账户 APPID
+    api_key: 'GDLrYmr3IRyDjEtbXf7IWjO7'
+    secret_key: 'smLaZmYm38m70cZM9n2CzjodTdFj1Z95'
+    dev_pid: 80001   # 1937: 普通话远场，1536：普通话(支持简单的英文识别)，80001：ASR极速版（请使用自己的百度语音账户再使用）
+    per: 4  # 发音人选择 0：女生；1：男生；3：度逍遥；4：度丫丫
+    lan: 'zh'
+
+# 聊天机器人
+# emotibot  - 小影机器人
+# http://botfactory.emotibot.com/
+robot: emotibot
+emotibot:
+    appid: 'c8c0408d509dc578199c7e1a25c0134c'
+
+## 本地音乐插件
+LocalPlayer:
+    path: "~/Music"  # 本地音乐存放路径
+
+#######################
+# 传感器插件的配置
+#######################
+
+SmartSensor:
+    enable: true
+    sensor_response: false
+    supervise_response: true
+    patterns:
+        - ".*开.*台灯"
+        - ".*台灯.*开"
+        - ".*关.*台灯"
+        - ".*台灯.*关"
+        - ".*开.*灯"
+        - ".*灯.*开"
+        - ".*关.*灯"
+        - ".*灯.*关"
+        - ".*开.*风扇"
+        - ".*风扇.*开"
+        - ".*关.*风扇"
+        - ".*风扇.*关"
+        - ".*开.*报警"
+        - ".*报警.*开"
+        - ".*关.*报警"
+        - ".*报警.*关"
+        - ".*开.*窗帘"
+        - ".*窗帘.开*"
+        - ".*关.*窗帘"
+        - ".*窗帘.关*"
+        - ".*停.*窗帘"
+        - ".*窗帘.*停"
+        - ".*开.*插座"
+        - ".*开.*插排"
+        - ".*插座.*开"
+        - ".*插排.*开"
+        - ".*关.*插座"
+        - ".*关.*插排"
+        - ".*插座.*关"
+        - ".*插排.*关"
+        - ".*开.*门"
+        - ".*门.*开"
+        - ".*锁.*门"
+        - ".*门.*锁"
+        - ".*温湿度"
+        - ".*温度"
+        - ".*湿度"
+        - ".*光照"
+        - ".*光强"
+        - ".*光线"

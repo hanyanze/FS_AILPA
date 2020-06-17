@@ -1,0 +1,73 @@
+sensor0:
+  name: lightpower01
+  payload_key: lightpower
+  sensor_type: "4c"
+
+sensor1:
+  name: infrared01
+  payload_key: infrared
+  sensor_type: "49"
+
+sensor2:
+  name: temhum01
+  payload_key: temhum
+  sensor_type: "54"
+
+sensor3:
+  name: flame01
+  payload_key: flame
+  sensor_type: "26"
+
+sensor4:
+  name: itr01
+  payload_key: itr
+  sensor_type: "50"
+
+sensor5:
+  name: gas01
+  payload_key: gas
+  sensor_type: "47"
+
+sensor6:
+  name: fog01
+  payload_key: fog
+  sensor_type: "46"
+
+sensor7:
+  name: potentiometer01
+  payload_key: potentiometer
+  sensor_type: "30"
+
+
+sensor8:
+  name: ultrasonic01
+  payload_key: ultrasonic
+  sensor_type: "55"
+
+sensor9:
+  name: light01
+  payload_key: light
+  sensor_type: "6c"
+  sensor_protocol_on: "210309015a402d6c9effffff"
+  sensor_protocol_off: "210309015a402d6c9e000000"
+
+sensor10:
+  name: fan01
+  payload_key: fan
+  sensor_type: "66"
+  sensor_protocol_on: "210109015a402c662b31"
+  sensor_protocol_off: "210109015a402c662b30"
+
+sensor11:
+  name: relay01
+  payload_key: relay
+  sensor_type: "72"
+  sensor_protocol_on: "210109015a402e722d31"
+  sensor_protocol_off: "210109015a402e722d30"
+
+sensor12:
+  name: beep01
+  payload_key: beep
+  sensor_type: "62"
+  sensor_protocol_on: "210109015a402f622931"
+  sensor_protocol_off: "210109015a402f622930"
