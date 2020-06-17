@@ -43,6 +43,7 @@ class Updater(object):
         success = True
         if 'tag_name' in update_info:
             if self._pull(APP_PATH, update_info['tag_name']) and self._pip(APP_PATH):
+                os.system('chmod 777 /home/pi/FS_AILPA/run_file/*.sh')
                 print('更新成功！')
             else:
                 print('更新失败！')
@@ -80,6 +81,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MyWindow, self).__init__()
         self.setupUi(self)
+        self.setWindowFlags(Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint)
         self.u = Updater()
         self.update_info = {}
         self.label.setText("当前版本：" + self.u._get_version(APP_PATH, "未知"))
@@ -124,7 +126,8 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     MainWindow = MyWindow()
-    # MainWindow.showFullScreen()
+    # showFullScreen()
+    # MainWindow.setWindowFlags(FramelessWindowHint)
     MainWindow.show()
     sys.exit(app.exec_())
 
