@@ -10,4 +10,8 @@
 - 传感器之间可实现联动，且开发程度高，开发者可以使用界面形式任意联动传感器。
 - 无线传感网节点模块配备一键还原卡，程序损坏无需使用计算机连接下载，使用还原卡轻松还原。
 - 无线传感网节点模块配备电池，学习过程无需连接电源线。
-- 配套设计了系统的“人工智能语音”课程体系；
+- 配套设计了系统的“人工智能语音”课程体系。
+
+样式：
+![image](https://github.com/hanyanze/FS_AILPA/blob/master/GitHubImage/image1.jpeg)
+![image](https://github.com/hanyanze/FS_AILPA/blob/master/GitHubImage/image2.jpeg)
