@@ -6,7 +6,7 @@ import os
 _config = {}
 has_init = False
 
-def doInit(config_file="/home/pi/xiaobu-smartHome/local_socket/config.yml"):
+def doInit(config_file="/home/pi/FS_AILPA/local_socket/config.yml"):
     global _config
     dict_num = 0
     # Read config
