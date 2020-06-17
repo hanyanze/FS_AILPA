@@ -43,7 +43,6 @@ class Updater(object):
         success = True
         if 'tag_name' in update_info:
             if self._pull(APP_PATH, update_info['tag_name']) and self._pip(APP_PATH):
-                self.update_info.clear()
                 print('更新成功！')
             else:
                 print('更新失败！')
@@ -57,7 +56,7 @@ class Updater(object):
         else:
             return current
 
-    def fetch(self, dev=False):
+    def fetch(self):
         global URL
         url = URL
         try:
@@ -105,7 +104,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                     self.textEdit.setText("已经是最新版本啦~~~")
                     self.pushButton.setEnabled(True)
             except Exception as e:
-                pass
+                print(e)
         elif self.pushButton.text() == "更新":
             self.pushButton.setEnabled(False)
             self.pushButton.setText("更新中...")
@@ -113,6 +112,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                 # self.textEdit.setText(self.update_info['body'])
                 self.pushButton.setText("检查更新")
                 self.pushButton.setEnabled(True)
+                self.update_info.clear()
 
     @staticmethod
     def display_min():
