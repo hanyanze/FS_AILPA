@@ -45,7 +45,6 @@ class Updater(object):
             if self._pull(APP_PATH, update_info['tag_name']) and self._pip(APP_PATH):
                 self.update_info.clear()
                 print('更新成功！')
-                # self.update_info.pop('main')
             else:
                 print('更新失败！')
                 success = False
@@ -59,16 +58,9 @@ class Updater(object):
             return current
 
     def fetch(self, dev=False):
-        global URL, DEV_URL
+        global URL
         url = URL
-        if dev:
-            url = DEV_URL
-        now = datetime.now()
-        if (now - self.last_check).seconds <= 1800:
-            print('30 分钟内已检查过更新，使用上次的检查结果：{}'.format(self.update_info))
-            return self.update_info
         try:
-            self.last_check = now
             r = requests.get(url, timeout=3)
             info = json.loads(r.text)
             main_version = info['tag_name']
@@ -83,7 +75,7 @@ class Updater(object):
             return self.update_info
         except Exception as e:
             print("检查更新失败：", e)
-            return {"error": e}
+            return {"error": "检查更新失败，请稍后再试！"}
 
 
 class MyWindow(QMainWindow, Ui_MainWindow):
@@ -97,13 +89,17 @@ class MyWindow(QMainWindow, Ui_MainWindow):
     def checkupdate(self, item):
         if self.pushButton.text() == "检查更新":
             self.update_info = self.u.fetch()
+            print(self.update_info)
             try:
-                if self.update_info['tag_name']:
+                if 'tag_name' in self.update_info:
+                    print("aaaa")
                     self.textEdit.setText(self.update_info['body'])
                     self.pushButton.setText("更新")
-                elif self.update_info['error']:
+                elif 'error' in self.update_info:
+                    print("bbbb")
                     self.textEdit.setText(self.update_info['error'])
                 else:
+                    print("cccc")
                     self.textEdit.setText("已经是最新版本啦~~~")
             except Exception as e:
                 pass
