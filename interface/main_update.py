@@ -90,22 +90,29 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 
     def checkupdate(self, item):
         if self.pushButton.text() == "检查更新":
+            self.pushButton.setEnabled(False)
             self.update_info = self.u.fetch()
-            print(self.update_info)
+            # print(self.update_info)
             try:
                 if 'tag_name' in self.update_info:
                     self.textEdit.setText(self.update_info['body'])
+                    self.pushButton.setEnabled(True)
                     self.pushButton.setText("更新")
                 elif 'error' in self.update_info:
                     self.textEdit.setText(self.update_info['error'])
+                    self.pushButton.setEnabled(True)
                 else:
                     self.textEdit.setText("已经是最新版本啦~~~")
+                    self.pushButton.setEnabled(True)
             except Exception as e:
                 pass
         elif self.pushButton.text() == "更新":
+            self.pushButton.setEnabled(False)
+            self.pushButton.setText("更新中...")
             if self.u.update(self.update_info):
-                self.textEdit.setText(self.update_info['body'])
+                # self.textEdit.setText(self.update_info['body'])
                 self.pushButton.setText("检查更新")
+                self.pushButton.setEnabled(True)
 
     @staticmethod
     def display_min():
