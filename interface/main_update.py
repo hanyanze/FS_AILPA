@@ -124,7 +124,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     MainWindow = MyWindow()
-    MainWindow.showFullScreen()
+    # MainWindow.showFullScreen()
     MainWindow.show()
     sys.exit(app.exec_())
 
