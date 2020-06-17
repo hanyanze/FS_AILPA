@@ -43,9 +43,9 @@ asr_engine: baidu-asr
 # 百度语音服务
 # https://ai.baidu.com/tech/speech/asrpro
 baidu_yuyin:
-    appid: '15019988'  # 建议使用自己的百度语音账户 APPID
-    api_key: 'GDLrYmr3IRyDjEtbXf7IWjO7'
-    secret_key: 'smLaZmYm38m70cZM9n2CzjodTdFj1Z95'
+    appid: '20408275'  # 建议使用自己的百度语音账户 APPID
+    api_key: 'n4xhcenm51AvCGnTjFSW0GI4'
+    secret_key: 'qRl18KYu4bhAaGLATNfcCpApw66BRweX'
     dev_pid: 80001   # 1937: 普通话远场，1537：普通话(支持简单的英文识别)，80001：ASR极速版
     per: 4  # 发音人选择 0：女生；1：男生；3：度逍遥；4：度丫丫
     lan: 'zh'
