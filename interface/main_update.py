@@ -124,7 +124,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
                 print(e)
         elif self.pushButton.text() == "更新":
             self.pushButton.setEnabled(False)
-            self.pushButton.setText("更新中...")
+            self.pushButton.setText("更新失败")
             if self.u.update(self.update_info):
                 self.label.setText("当前版本：" + self.u._get_version(APP_PATH, "未知"))
                 self.pushButton.setText("更新成功!")
