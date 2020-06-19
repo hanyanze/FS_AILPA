@@ -67,7 +67,7 @@ LocalPlayer:
 hass:
   url: "http://127.0.0.1"   #切记加上http://，ip或者域名为你的HomeAssistant的主机
   port: "8123"             # 端口为你的HomeAssistant的端口和网页端口一样
-  key: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI5N2NlZDE1YTMwZmM0ODQ0YTNmY2VjMmJhYWE4MDI5ZiIsImlhdCI6MTU5MDY0ODU4OCwiZXhwIjoxOTA2MDA4NTg4fQ.xKJhnneR25f9FJw7frhr-KmWvGoAWWmSvYCunZFARrI" # 密钥，注意 Bearer 不可少
+  key: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI2MzA0MmZlMmM5N2Q0NWM3YTYwZjM1NzYyMjg3NTVmZSIsImlhdCI6MTU5MjU1NjAzNSwiZXhwIjoxOTA3OTE2MDM1fQ.BHCks30aRxptY8FW3M2HyqEBUFU7UqlLkAzChfA9hLE" # 密钥，注意 Bearer 不可少
   patterns:
     - ".*开.*灯"
     - ".*关.*灯"
