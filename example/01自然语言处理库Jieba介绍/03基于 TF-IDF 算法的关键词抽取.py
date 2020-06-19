@@ -1,6 +1,6 @@
 import jieba.analyse
 
-file = "03.txt"
+file = "ai.txt"
 topK = 12
 content = open(file, 'rb').read()
 
