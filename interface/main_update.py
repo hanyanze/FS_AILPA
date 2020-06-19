@@ -57,6 +57,20 @@ class Updater(object):
         else:
             return current
 
+    def _get_content(self, path, current):
+        if os.path.exists(os.path.join(path, 'CONTENT')):
+            with open(os.path.join(path, 'CONTENT'), 'r') as f:
+                return f.read().strip()
+        else:
+            return current
+
+    def _put_content(self, path, content):
+        if os.path.exists(os.path.join(path, 'CONTENT')):
+            with open(os.path.join(path, 'CONTENT'), 'w') as f:
+                return f.write(content)
+        else:
+            pass
+
     def fetch(self):
         global URL
         url = URL
@@ -71,6 +85,7 @@ class Updater(object):
                 self.update_info['tag_name'] = info['tag_name']
             if 'body' in info:
                 self.update_info['body'] = info['body']
+                self._put_content(APP_PATH, self.update_info['body'])
             return self.update_info
         except Exception as e:
             print("检查更新失败：", e)
@@ -85,6 +100,7 @@ class MyWindow(QMainWindow, Ui_MainWindow):
         self.u = Updater()
         self.update_info = {}
         self.label.setText("当前版本：" + self.u._get_version(APP_PATH, "未知"))
+        self.textEdit.setText(self.u._get_content(APP_PATH, "未知"))
         self.pushButton_min.setStyleSheet("QPushButton{border-image: url(images/min.png)}")
         self.pushButton_close.setStyleSheet("QPushButton{border-image: url(images/close.png)}")
 
